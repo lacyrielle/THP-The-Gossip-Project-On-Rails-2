@@ -34,15 +34,26 @@
 </nav>
 
 <div class="container">
-  <h1 class="display-4 text-center">The Gossip Project</h1>
+  <h1 class="display-4 text-center my-5">The Gossip Project</h1>
 
-  <p>id : <%= @user.id %></p>
-  <p>first name id : <%= @user.first_name %></p>
-  <p>last name : <%= @user.last_name %></p>
-  <p>description : <%= @user.description %></p>
-  <p>email : <%= @user.email %></p>
-  <p>age : <%= @user.age %></p>
-  <p>city : <%= @user.city.name %></p>
+  <div class="row justify-content-center">
+
+    <div class="card flex-row flex-wrap">
+      <div class="card-header border-0">
+        <img src="https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png" alt=""
+             width="300">
+      </div>
+      <div class="card-block px-2">
+        <h4 class="card-title"><%= @user.first_name %> <%= @user.last_name.upcase %></h4>
+        <p class="card-text"><strong>Age : </strong><%= @user.age %> ans</p>
+        <p class="card-text"><strong>Ville :</strong> <%= @user.city.name %></p>
+        <p class="card-text"><strong>Email :</strong> <a href="mailto:<%= @user.email %>"><%= @user.email %></a></p>
+        <p class="card-text"><strong>Description : </strong><br /><%= @user.description %></p>
+        <a href="#" class="btn btn-info">Envoyer un message privé</a>
+        <div class="w-100"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Optional JavaScript -->
