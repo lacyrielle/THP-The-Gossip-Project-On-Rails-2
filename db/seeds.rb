@@ -2,6 +2,9 @@ require 'faker'
 
 User.destroy_all
 City.destroy_all
+Gossip.destroy_all
+Tag.destroy_all
+PrivateMessage.destroy_all
 
 10.times do
   city = City.create(
@@ -12,9 +15,9 @@ end
 
 10.times do
   user = User.create(
-    first_name: Faker::Name.first_name, 
-    last_name: Faker::Name.last_name, 
-    description: Faker::Hipster.sentence, 
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    description: Faker::Hipster.sentence,
     email: Faker::Internet.email,
     age: rand(16..88),
     city: City.all.sample
@@ -23,7 +26,7 @@ end
 
 20.times do
   gossip = Gossip.create(
-    title: Faker::Name.first_name, 
+    title: Faker::Movies::StarWars.wookiee_words.sample,
     content: Faker::Movies::HarryPotter.quote,
     user: User.all.sample
     )
@@ -34,7 +37,7 @@ end
     tag = Tag.create(
         title: Faker::App.name
     )
-end 
+end
 
 
 30.times do
