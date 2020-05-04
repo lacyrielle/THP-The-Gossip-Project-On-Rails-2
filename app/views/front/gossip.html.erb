@@ -34,23 +34,25 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1 class="display-4 text-center">The Gossip Project</h1>
+  <h1 class="display-4 text-center">The Gossip Project</h1>
 
+  <div class="row justify-content-center">
+      <div class="col-6">
         <div class="card">
-          <img class="card-img-top" src="https://actu.meilleurmobile.com/wp-content/uploads/2015/06/gossip-application.jpg" alt="Card
-        image cap">
+          <img class="card-img-top" alt="Card image cap" src="https://actu.meilleurmobile.com/wp-content/uploads/2015/06/gossip-application.jpg">
           <div class="card-body">
-            <h5 class="card-title"><%=@title %></h5>
-            <p class="card-text"><small class="text-muted"><%=@author %></small></p>
-            <p class="card-text"><%=@content %></p>
-            <button type="button" class="btn btn-primary btn-block">Voir le
-              potin</button>
+            <h5 class="card-title"><%=@gossip.title %></h5>
+            <p class="card-text"><%= @gossip.content %></p>
+            <p class="card-text">
+            <p class="card-text">
+              <small class="text-muted">
+                posté par <a href="<%= user_path(@gossip.user.id) %>"><%=@gossip.user.first_name %></a>
+                le <%=@gossip.created_at.strftime("%d/%m/%Y à %H:%I") %>
+              </small>
+            </p>
           </div>
         </div>
-
-    </div>
+      </div>
   </div>
 </div>
 

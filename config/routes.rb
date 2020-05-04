@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'team', to: 'front#team'
   get 'contact', to: 'front#contact'
   get 'welcome/:first_name', to: 'front#welcome'
+  get 'user/:id', to: 'front#user', as: 'user'
 end

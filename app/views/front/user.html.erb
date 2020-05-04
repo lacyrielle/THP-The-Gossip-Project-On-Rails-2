@@ -7,8 +7,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- Custom CSS -->
-  <% stylesheet_link_tag 'application' %>
+
   <title>The Gossip Project - Equipe</title>
 </head>
 <body>
@@ -37,26 +36,13 @@
 <div class="container">
   <h1 class="display-4 text-center">The Gossip Project</h1>
 
-  <div class="row">
-    <% @gossips.each do |gossip| %>
-      <div class="col-4 mb-3">
-        <div class="card">
-          <img class="card-img-top" alt="Card image cap" src="https://actu.meilleurmobile.com/wp-content/uploads/2015/06/gossip-application.jpg">
-          <div class="card-body">
-            <h5 class="card-title"><%=gossip.title %></h5>
-            <p class="card-text"><%= truncate gossip.content, length: 30 %></p>
-            <p class="card-text">
-              <small class="text-muted">
-                posté par <a href="<%= user_path(gossip.user.id) %>"><%=gossip.user.first_name %></a>
-                le <%=gossip.created_at.strftime("%d/%m/%Y %H:%I") %>
-              </small>
-            </p>
-            <a type="button" class="btn btn-primary btn-block" href="<%=gossip_path(gossip.id) %>">Voir le potin</a>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <p>id : <%= @user.id %></p>
+  <p>first name id : <%= @user.first_name %></p>
+  <p>last name : <%= @user.last_name %></p>
+  <p>description : <%= @user.description %></p>
+  <p>email : <%= @user.email %></p>
+  <p>age : <%= @user.age %></p>
+  <p>city : <%= @user.city.name %></p>
 </div>
 
 <!-- Optional JavaScript -->
