@@ -11,7 +11,6 @@
   <title>The Gossip Project - Equipe</title>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">The Gossip Project</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,15 +20,11 @@
   <!-- Navbar -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="<%=root_path %>">Contact</a>
-      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="<%=team_path %>">Equipe
-          <span
-            class="sr-only">
-          (current)
-        </span></a>
+        <a class="nav-link" href="<%=root_path %>">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=team_path %>">Equipe</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%=contact_path %>">Contact</a>
@@ -38,9 +33,26 @@
   </div>
 </nav>
 
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4 text-center">The Gossip Project</h1>
 
-<h1>BIENVENUE <%=@first_name %> !</h1>
-<p>Ici c'est notre super site de potins, il est chouette, non ?</p>
+        <div class="card">
+          <img class="card-img-top" src="https://actu.meilleurmobile.com/wp-content/uploads/2015/06/gossip-application.jpg" alt="Card
+        image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=@title %></h5>
+            <p class="card-text"><small class="text-muted"><%=@author %></small></p>
+            <p class="card-text"><%=@content %></p>
+            <button type="button" class="btn btn-primary btn-block">Voir le
+              potin</button>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
